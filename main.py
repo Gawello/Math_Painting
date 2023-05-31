@@ -39,12 +39,22 @@ class Rectangle:
 
 
 class Square:
-
-    def __init__(self, x, y, a, color):
+    """A square shape that can be drawn on a Canvas object"""
+    def __init__(self, x, y, side, color):
         self.x = x
         self.y = y
-        self.a = a
+        self.side = side
         self.color = color
 
     def draw(self, canvas):
-        pass
+        """Draws itself into the canvas"""
+        # Changes a slice of the array with new values
+        canvas.data[self.x: self.x + self.side, self.y: self.y + self.side] = self.color
+
+
+canvas = Canvas(height=20, width=30, color=(255, 255, 255))
+r1 = Rectangle(x=1, y=6, height=7, width=10, color=(100, 200, 125))
+r1.draw(canvas)
+s1 = Square(x=1, y=3, side=3, color=(0, 100, 222))
+s1.draw(canvas)
+canvas.make('canvas.png')
