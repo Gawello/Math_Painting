@@ -12,6 +12,7 @@ canvas_color = input("Enter canvas color \n Your options:\n white, black, red, g
 # Create a canvas with the user data
 canvas = Canvas(height=canvas_height, width=canvas_width, color=colors[canvas_color])
 
+# Endless loop for the user, but only 1 rectangle and 1 square can be drawn
 while True:
     shape_type = input("What shape do you like to draw (rectangle or square)? Enter quit to finish canvas..")
     # Ask for rectangle data and create rectangle if user entered 'rectangle'
